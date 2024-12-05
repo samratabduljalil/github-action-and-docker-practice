@@ -1,14 +1,13 @@
-name: Test and Push Docker Image on Pull Request Merge
+name: Test and Push Docker Image
 
 on:
+  push:
+    branches: ['main']
   pull_request:
-    types: [closed] # Trigger the workflow when a pull request is closed
-    branches: 
-      - main       # Specify the target branch for the pull request
+    branches: ['main']
 
 jobs:
   test-and-build:
-    if: github.event.pull_request.merged == true # Ensure the PR is merged
     runs-on: ubuntu-latest
 
     steps:
@@ -36,4 +35,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/docker_and_github_actions_test:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/docker_and_gihub_actions_test:latest
