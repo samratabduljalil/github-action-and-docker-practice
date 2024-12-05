@@ -43,4 +43,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/docker_and_github_actions_test:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/dock_action
