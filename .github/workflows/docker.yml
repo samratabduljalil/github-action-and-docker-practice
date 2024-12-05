@@ -19,9 +19,8 @@ jobs:
         with:
           python-version: 3.9
 
-        -name: run tests
-         run: |
-          python -m unittest discover -s . -p "test_*.py"
+        -name: Run tests
+         run: python -m unittest discover -s . -p "test_*.py"
          
         -name: Docker login
          if : success()
